@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Contact</title>
+  <script>
+    window.onload = function () {
+      const gmailURL = "https://mail.google.com/mail/?view=cm&fs=1&to=productionbyaplus@gmail.com&su=I%20want%20the%20A%2B%20experience!";
+      const mailtoURL = "mailto:productionbyaplus@gmail.com?subject=I%20want%20the%20A%2B%20experience!";
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const prefersGmail = navigator.userAgent.includes("Chrome") || navigator.userAgent.includes("Firefox");
+
+      if (!isMobile && prefersGmail) {
+        window.location.href = gmailURL;
+      } else {
+        window.location.href = mailtoURL;
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the best contact option...</p>
+</body>
+</html>
